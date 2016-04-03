@@ -20,6 +20,10 @@
 # Unity3D Generated File On Crash Reports
 sysinfo.txt
 
+# Android device signature file
+# (remove to store signatures in git)
+Assets/Plugins/Android/assets/oculussig*
+
 # =========================
 # Operating System Files
 # =========================
