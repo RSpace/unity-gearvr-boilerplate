@@ -2,6 +2,9 @@
 
 This repository can be used as a starting point for building Samsung Gear VR apps in Unity 5.
 
+If you are new to Gear VR development, chapter 4 in the book "Learning Virtual Reality" is highly recommended. It's currently available online here:
+https://www.safaribooksonline.com/library/view/learning-virtual-reality/9781491922828/ch04.html
+
 ## Building the project
 
 You will need to download and install a few things to be able to build this project.
