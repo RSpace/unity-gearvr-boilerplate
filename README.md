@@ -74,11 +74,29 @@ Go to https://developer.oculus.com/osig/ (make sure you are logged in with your 
 
 Click the `Download File` button and save file in `/Assets/Plugins/Android/assets/` relative to root of this boilerplate Unity project.
 
-### Enable VR developer mode
+### Enable VR developer mode (optional)
 
 This is an optional step if you want to be able to view the application in stereo mode on the phone without inserting it into the Gear VR. Follow the steps here:
 
 https://developer.oculus.com/documentation/mobilesdk/latest/concepts/mobile-troublesh-device-run-app-outside/
+
+### Publish via WiFi (optional)
+
+This is an optional step if you want to be able to publish an updated build to the phone without removing it from the Gear VR headset.
+
+Install "ADB wireless (no root)" from the Google Play Store on your phone:
+https://play.google.com/store/apps/details?id=za.co.henry.hsu.adbwirelessbyhenry
+
+Connect your phone to your computer via USB and run the app. Follow the on screen instructions, which tell you to run:
+
+```
+./adb tcpip 5555
+./adb connect [device IP]
+```
+
+Remember that the adb command is in the `platform-tools` directory of your Android SDK install directory and omit the prefixed `./` on Windows.
+
+Build & Run the project as described below while the phone is connected via USB. On the following builds you can keep your phone in the Gear VR and it will automatically restart with the new build once the Unity is done building and publishing it over WiFi.
 
 ### Build and run the project
 
