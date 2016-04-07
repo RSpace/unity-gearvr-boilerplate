@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour {
   private VRInteractiveItem[] m_InteractiveItems;
   private VRInput m_VRInput;
 
-  [SerializeField] Camera m_MainCamera;
+  [SerializeField] GameObject m_CameraContainer;
   [SerializeField] float m_MovementSpeed = 3f;
 
 	// Use this for initialization
@@ -53,17 +53,17 @@ public class GameManager : MonoBehaviour {
     if(direction != VRInput.SwipeDirection.NONE) {
       switch(direction) {
         case VRInput.SwipeDirection.LEFT:
-          m_MainCamera.transform.Translate(m_MovementSpeed * -1, 0, 0);
+          m_CameraContainer.transform.Translate(0, 0, m_MovementSpeed);
           break;
         case VRInput.SwipeDirection.RIGHT:
-          m_MainCamera.transform.Translate(m_MovementSpeed, 0, 0);
+          m_CameraContainer.transform.Translate(0, 0, m_MovementSpeed * -1);
           break;
-      case VRInput.SwipeDirection.UP:
-        m_MainCamera.transform.Translate(0, 0, m_MovementSpeed);
-        break;
-      case VRInput.SwipeDirection.DOWN:
-        m_MainCamera.transform.Translate(0, 0, m_MovementSpeed * -1);
-        break;
+        case VRInput.SwipeDirection.UP:
+          m_CameraContainer.transform.Translate(m_MovementSpeed * -1, 0, 0);
+          break;
+        case VRInput.SwipeDirection.DOWN:
+          m_CameraContainer.transform.Translate(m_MovementSpeed, 0, 0);
+          break;
       }
     }
   }
